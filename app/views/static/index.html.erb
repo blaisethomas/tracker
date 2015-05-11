@@ -2,21 +2,25 @@
 <%= render 'cohorts/search' %>
 
 <div class="main">
+	
   <% @users.each do |a| %>
-    <%#= a %>
     <div>
       <div class="image">
         <%= image_tag(a["avatar"]) %>
       </div>
       <h3><%= a["name"] %>  // github username : <%= a["login"] %></h3>
+      
+      
+      <% a["activity"].each do |b| %>
+      <ul><li>  
+      <%= b["repo"] %>
+       || <%= link_to (b["commit"]["message"]),(b["commit"]["url"]) %> || <%= b["created_at"]%>
+      <%#= b %>
+      </li></ul>
+      <% end %>
+      
     </div>
+
   <% end %>
 
-  <ol>
-  <% @activities.each do |b| %>
-  	<li>
-	<%= link_to(b["message"], b["url"]) %>
-	</li>
-  <% end %>
-  </ol>
 </div>
