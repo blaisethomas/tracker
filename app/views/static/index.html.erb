@@ -1,0 +1,22 @@
+<%#= @class.first %>
+<%= render 'cohorts/search' %>
+
+<div class="main">
+  <% @users.each do |a| %>
+    <%#= a %>
+    <div>
+      <div class="image">
+        <%= image_tag(a["avatar"]) %>
+      </div>
+      <h3><%= a["name"] %>  // github username : <%= a["login"] %></h3>
+    </div>
+  <% end %>
+
+  <ol>
+  <% @activities.each do |b| %>
+  	<li>
+	<%= link_to(b["message"], b["url"]) %>
+	</li>
+  <% end %>
+  </ol>
+</div>

@@ -1,0 +1,14 @@
+<%#= @class.first %>
+<%= render 'cohorts/search' %>
+
+<div class="main">
+  <% @users.each do |a| %>
+    <%#= a %>
+    <div>
+      <div class="image">
+        <%= image_tag(a["avatar"]) %>
+      </div>
+      <h3><%= a["name"] %>  // github username : <%= a["login"] %></h3>
+    </div>
+  <% end %>
+</div>
