@@ -1,26 +1,7 @@
 <%#= @class.first %>
+
+<div class="col-md-4 padding">
 <%= render 'cohorts/search' %>
-
-<div class="main">
-	
-  <% @users.each do |a| %>
-    <div>
-      <div class="image">
-        <%= image_tag(a["avatar"]) %>
-      </div>
-      <h3><%= a["name"] %>  // github username : <%= a["login"] %></h3>
-      
-      
-      <% a["activity"].each do |b| %>
-      <ul><li>  
-      <%= b["repo"] %>
-       || <%= link_to (b["commit"]["message"]),(b["commit"]["url"]) %> || <%= b["created_at"]%>
-      <%#= b %>
-      </li></ul>
-      <% end %>
-      
-    </div>
-
-  <% end %>
-
+<p>Search any github team for all members' recent open source contributions: </p>
 </div>
+
