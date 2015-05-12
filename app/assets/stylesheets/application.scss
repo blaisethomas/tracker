@@ -7,16 +7,24 @@
 }
 
 .imagesize {
-	height : 250px;
-	width:250px;
+	height : 300px;
+	width:300px;
 	margin-top: 20px;
 	margin-bottom: 20px;
 
 }
+
+.static {
+	border: 1px solid black; 
+	border-radius: 5%;
+}
+
+
+
 .main {
-  max-width: 500px;
-  margin:0 auto;
-  text-align: center;
+	max-width: 500px;
+	margin:0 auto;
+	text-align: center;
  }
 
 
