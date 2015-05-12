@@ -1,6 +1,6 @@
 <div class="searchBar text-center">
   <%= form_tag search_path, {url: new_cohort_path, method: :get} do %> 
-    <%= text_field_tag :search, params[:search] , :class => "searchbar" %><br />
-    <%= submit_tag "search by team id" , :class => "searchbtn" %>
+    <%= text_field_tag :search, params[:search] , :class => "form-control input-lg" %><br />
+    <%= submit_tag "search by team id" , :class => "btn btn-primary margin" %>
   <% end %>
 </div>

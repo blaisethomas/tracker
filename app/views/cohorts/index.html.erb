@@ -1,26 +1,26 @@
-
-<%= render 'cohorts/search' %>
-
-<div class="main">
-	
-  <% @users.each do |a| %>
-    <div>
-      <div class="image">
-        <%= image_tag(a["avatar"]) %>
-      </div>
-      <h3><%= a["name"] %>  // github username : <%= a["login"] %></h3>
-      
-      
-      <% a["activity"].each do |b| %>
-      <ul><li>  
-      <%= b["repo"] %>
-       || <%= link_to (b["commit"]["message"]),(b["commit"]["url"]) %> || <%= b["created_at"]%>
-      <%#= b %>
-      </li></ul>
-      <% end %>
-      
-    </div>
-    <hr>
-  <% end %>
-
+<div class="main-container">
+<% @users.each do |a| %>
+    <div class="row bg-info">
+		<h2 style="text-align:center; margin:30px;"><%= a["name"] %> || github: <%= a["login"] %></h2>
+	</div>
+    <div class="row">
+		
+	    <div class="col-md-4">
+		
+			<%= image_tag(a["avatar"], :class => "img-responsive img-thumbnail center-block imagesize")%>
+			
+		</div>
+		<div class="col-md-8">
+			<table class="table table-condensed">
+			<th> repo </th> <th> commit message </th> <th> date/time </th>
+			<% a["activity"].each do |b| %>
+			<tr>
+			<td><%= b["repo"] %></td>
+			<td><%= link_to (b["commit"]["message"]),(b["commit"]["url"]) %></td><td><%= b["created_at"]%></td>
+			</tr>
+			<% end %>
+	    	</table>  
+	    </div> 
+    </div> <!-- end of row -->
+<% end %> <!-- end of users loop -->
 </div>
