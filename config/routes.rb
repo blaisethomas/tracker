@@ -16,7 +16,8 @@ Rails.application.routes.draw do
     resources :cohorts
 
     post 'cohorts' => "cohorts#search", as: :search
-  
+    get 'cohorts/leaderboard' => "cohorts#leaderboard", as: :leaderboard
+    # cohorts GET    /cohorts(.:format)          cohorts#index
 
   # Example resource route with options:
   #   resources :products do
