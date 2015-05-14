@@ -26,7 +26,11 @@ class CohortsController < ApplicationController
       @activity = HTTParty.get("https://api.github.com/users/" + user["login"] + "/events/public?access_token=" + ENV["GITHUB_KEY"])
       # make a new profile for the student index
       # insert username to user
-      @person = { "name" => user["name"], "avatar" => user["avatar_url"], "login" => user["login"], "activity" => []}
+      if user["name"] != nil 
+        @person = { "name" => user["name"], "avatar" => user["avatar_url"], "login" => user["login"], "activity" => []}
+      else
+        @person = { "name" => "AAA missing github name", "avatar" => user["avatar_url"], "login" => user["login"], "activity" => []}
+      end
       #raise @person.inspect
       @activity.each do |a|
         #raise a.inspect
